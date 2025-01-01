@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Navigation from "@/components/Navigation/Navigation";
+import Footer from "@/components/Footer/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -46,9 +48,17 @@ const RootLayout = (props: IRootLayoutProps) => {
         />
         <link rel="manifest" href="/site.webmanifest" />
         <link rel="stylesheet" href="https://use.typekit.net/qjg3agw.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+          rel="stylesheet"
+        />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <Navigation />
         {children}
+        <Footer />
       </body>
     </html>
   );

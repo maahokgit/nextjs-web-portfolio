@@ -1,0 +1,55 @@
+.Row {
+  color: black;
+  margin-bottom: 25px;
+  padding-right: 5px;
+}
+
+.Row h1 {
+  color: white;
+}
+
+.CardText {
+  padding: 0 20px !important;
+}
+.CardText li {
+  align-items: unset;
+  justify-content: unset;
+}
+
+.CardText p {
+  font-family: "Josefin Sans", "Mulish", sans-serif;
+  font-size: 16px;
+  margin-bottom: 0;
+}
+
+.CardText ul {
+  padding-left: 0;
+}
+.CardText li::before {
+  content: "\2022";
+  padding-right: 10px;
+}
+
+.Accordion {
+  width: 100%;
+}
+
+.Accordion > .card {
+  margin: auto;
+}
+
+.Card {
+  background-color: #e5d9b6 !important;
+  border: 5px solid #be9e44;
+  width: 100%;
+}
+
+.Card a {
+  color: #007bff;
+}
+
+@media (max-width: 800px) {
+  .Row {
+    padding-right: 0;
+  }
+}

@@ -1,0 +1,44 @@
+.NavBar {
+  height: 70px;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background-color: rgb(0, 0, 0, 0.8);
+}
+
+.div {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+.NavBar nav {
+  height: 100%;
+  margin: auto 0 auto auto;
+}
+
+.onScroll {
+  background-color: white;
+}
+
+@media (max-width: 864px) {
+  .DeskTopOnly {
+    display: none;
+  }
+
+  .NavBar {
+    position: static;
+  }
+}
+
+@media (max-width: 290px) {
+  .div {
+    display: flex;
+    flex-direction: column;
+  }
+}

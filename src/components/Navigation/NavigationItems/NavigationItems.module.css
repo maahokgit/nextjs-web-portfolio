@@ -1,0 +1,56 @@
+.FontAwesomeIcon,
+.NavigationItems {
+  list-style: none;
+  display: flex;
+  padding: 0;
+}
+
+.NavigationItems {
+  margin: 0;
+  align-items: center;
+  height: 100%;
+  flex-flow: row;
+}
+
+a.Icon:hover,
+a.Icon:focus,
+a.Icon:active {
+  border-bottom: none;
+}
+
+.FontAwesomeIcon li {
+  padding: 0 20px;
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.FontAwesomeIcon li svg:hover {
+  color: #cbb26a;
+}
+
+@media (max-width: 801px) {
+  .NavigationItems {
+    margin-top: 50px;
+    flex-flow: column;
+  }
+
+  .FontAwesomeIcon,
+  li.Items {
+    padding: 10px;
+  }
+
+  .FontAwesomeIcon {
+    margin-top: 50px;
+    font-size: xx-large;
+  }
+
+  .FontAwesomeIcon li {
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+}
