@@ -1,20 +1,14 @@
-"use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 import Style from "./Footer.module.css";
-import { getData, options } from "@/content/Content";
+import { options } from "@/content/Content";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
-import { useState, useEffect } from "react";
+import { getData } from "@/lib/api";
 
-const Footer = () => {
-  const [footer, setFooter] = useState(null);
-
-  useEffect(() => {
-    console.log(process.env);
-    getData().then((value) => {
-      setFooter(value.footerCollection.items[0].footer.json);
-    });
-  }, []);
+const Footer = async () => {
+  const footer = await getData().then((value) => {
+    return value.footerCollection.items[0].footer.json;
+  });
 
   return (
     <footer className={Style.Footer}>

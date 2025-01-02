@@ -57,7 +57,7 @@ const RootLayout = (props: IRootLayoutProps) => {
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
         <Navigation />
-        {children}
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
