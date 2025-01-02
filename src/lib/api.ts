@@ -33,7 +33,7 @@ const query = `
 }
 `;
 
-const contentSpaceID = process.env.CONTENTFUL_SPACE;
+const contentSpaceID = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE;
 const contentToken = process.env.CONTENTFUL_DELIVERY_API;
 
 export const getData = async () =>
