@@ -5,7 +5,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #000000;
     --foreground: #ededed;
   }
 }
@@ -59,12 +59,12 @@ main {
   margin: 0;
 }
 
-a {
-  color: #cbb26a;
-  text-decoration: none;
+main a, h4 a, a {
+  color: #cbb26a !important;
+  text-decoration: none !important;
 }
 
-a:hover {
+main a:hover, h4 a:hover, a:hover {
   color: #fff !important;
   text-decoration: none !important;
   border-bottom: 1px solid #cbb26a;
@@ -96,12 +96,36 @@ textarea {
   padding: 6px 0 7px !important;
 }
 
+button {
+  color: black;
+}
+
 button:hover:not([disabled]) {
   transform: scale(0.8);
 }
 
 button:disabled {
   background-color: grey !important;
+}
+
+#standard-basic-helper-text {
+  color: red !important;
+}
+
+figure {
+  margin: 0;
+}
+
+h1, h2, h3, p, h4 {
+  font-family: "Josefin Sans", Mulish, sans-serif;
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
 }
 
 @media (prefers-color-scheme: dark) {

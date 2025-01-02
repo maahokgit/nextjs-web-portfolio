@@ -17,7 +17,7 @@ li.Items a {
 }
 
 li.Items a.active,li.Items a:hover {
-  color: white;
+  color: white !important;
   border-bottom: 1px solid #cbb26a;
 }
 

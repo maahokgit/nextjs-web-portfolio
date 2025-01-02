@@ -1,19 +1,28 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import dummy from "@/images/android-chrome-512x512.png";
+import headshot from "@/images/headshot.png";
 import Style from "./page.module.css";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "@/components/Spinner/Spinner";
-import { TextField, Button, Grid2 as Grid, Slide } from "@mui/material";
+import {
+  TextField,
+  Button,
+  Grid2 as Grid,
+  Slide,
+  ThemeProvider,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
+import { customTheme } from "@/lib/customTheme";
 
 const ContactPage = () => {
   const [validateEmail, setValidateEmail] = useState(false);
   const [message, setMessage] = useState("");
   const [formSuccess, setFormSuccess] = useState(false);
   const [sending, setSending] = useState(false);
+
   const validateEmailHandler = (event: any) => {
     const emailReg =
       /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -25,6 +34,8 @@ const ContactPage = () => {
       setMessage("Please enter a valid email");
     }
   };
+
+  const outerTheme = useTheme();
 
   const sendEmail = (e: any) => {
     setSending(true);
@@ -52,13 +63,14 @@ const ContactPage = () => {
   };
 
   const formInput = (
-    <>
+    <ThemeProvider theme={customTheme(outerTheme)}>
       <TextField
         id="standard-basic"
         label="Your Name"
         margin="normal"
         type="text"
         name="from_name"
+        variant="standard"
       />
       <TextField
         id="standard-basic"
@@ -66,6 +78,7 @@ const ContactPage = () => {
         margin="normal"
         type="email"
         name="from_name"
+        variant="standard"
         helperText={message}
         onChange={(e) => validateEmailHandler(e)}
       />
@@ -75,6 +88,7 @@ const ContactPage = () => {
         label="Your Message"
         margin="normal"
         multiline
+        variant="standard"
       />
       <Button
         className={Style.button}
@@ -85,19 +99,20 @@ const ContactPage = () => {
       >
         Submit
       </Button>
-    </>
+    </ThemeProvider>
   );
+
   return (
     <Grid container spacing={5} className={Style.formContainer}>
       <Slide direction="right" in={true} mountOnEnter unmountOnExit>
         <Grid size={{ md: 5, xs: 12 }}>
-          <Image src={dummy} alt="funko avi" />
+          <Image src={headshot} alt="headshot" width={480} height={626} />
         </Grid>
       </Slide>
       <Slide direction="left" in={true} mountOnEnter unmountOnExit>
         <Grid size={{ md: 7, xs: 12 }}>
           <h4>
-            I’m always keeping an eye out for opportunities and collaborations!
+            I’m always up for making new new connections and collaborations!
           </h4>
           <h4>Drop me a line if you’d like to chat.</h4>
           <form className={Style.ContactForm} onSubmit={sendEmail}>
